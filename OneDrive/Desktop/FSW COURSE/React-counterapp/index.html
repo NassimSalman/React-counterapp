@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+}
+
+.counter-container {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    gap:20px;
+    height:300px;
+    width:300px;
+    justify-content:center;
+    
+}
+
+button {
+    font-size: 1.5em;
+    margin: 0 10px;
+    cursor: pointer;
+    height:50px;
+    width:50px;
+    background-color: aqua;
+}
+
+.border{
+    border: 1px solid black;
+    height: 100px;
+
+}
+
+.border-button{
+    border: 1px solid black;
+    height: 60px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="counter-container border">
+   <div class="color"> <button id="subtractBtn">-</button> </div>         
+   <div> <span id="count">1</span> </div>
+      <div class="color"> <button id="addBtn">+</button> </div>  
+    </div>
+
+    <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const countElement = document.getElementById("count");
+    const addBtn = document.getElementById("addBtn");
+    const subtractBtn = document.getElementById("subtractBtn");
+
+    let count = 1;
+
+    addBtn.addEventListener("click", function () {
+        count++;
+        updateCounter();
+    });
+
+    subtractBtn.addEventListener("click", function () {
+        count--;
+        updateCounter();
+    });
+
+    function updateCounter() {
+        countElement.textContent = count;
+    }
+});
+
+
+    </script>
+    
+</body>
+</html>
